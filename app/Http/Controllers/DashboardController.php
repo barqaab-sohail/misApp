@@ -12,6 +12,6 @@ class DashboardController extends Controller
     public function index(){
     	$employee = HrEmployee::where('user_id',Auth::user()->id)->first();
     	$picture = Auth::user()->picturePath();
-    	return Inertia::render('Layout/Header', compact('employee','picture'));
+    	return Inertia::render('Dashboard', compact('employee','picture'));
     }
 }

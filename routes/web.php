@@ -25,10 +25,10 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/top', [DashboardController::class,'index']);
+Route::get('/dashboard', [DashboardController::class,'index']);
 
 require __DIR__.'/auth.php';

@@ -7,9 +7,10 @@ import UserPicture from '@/Pages/Layout/UserPicture';
 
 
 export default function Header(props) {
-	const user= {...props}
-	const pictureSrc = 'https://hrms.barqaab.pk/storage/'+user.picture;
-	const pictureWidth='10%';
+	// const user= {...props}
+	// const pictureSrc = 'https://hrms.barqaab.pk/storage/'+user.picture;
+	// const pictureWidth='10%';
+	  console.log(props);
 	return (
 	<>
 		<nav className="navbar  navbar-dark bg-primary  fixed-top">
@@ -28,7 +29,7 @@ export default function Header(props) {
 		                            type="button"
 		                            className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
 		                        >
-		                            {user.employee.first_name} {user.employee.last_name}
+		                           {props.name}
 		                            <svg
 		                                className="ml-2 -mr-0.5 h-4 w-4"
 		                                xmlns="http://www.w3.org/2000/svg"
