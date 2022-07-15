@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import Dropdown from '@/Components/Dropdown';
 import UserPicture from '@/Pages/Layout/UserPicture';
+import Resources from '@/Pages/Layout/Resources';
 
 
 
@@ -10,9 +11,10 @@ export default function Header(props) {
 	// const user= {...props}
 	// const pictureSrc = 'https://hrms.barqaab.pk/storage/'+user.picture;
 	// const pictureWidth='10%';
-	  console.log(props);
+	 //console.log(props);
 	return (
-	<>
+	<>	
+		<Resources/>
 		<nav className="navbar  navbar-dark bg-primary  fixed-top">
 		  <div className="container-fluid">
 		  	
