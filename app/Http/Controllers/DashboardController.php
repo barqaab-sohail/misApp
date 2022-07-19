@@ -10,8 +10,9 @@ use App\Models\Hr\HrEmployee;
 class DashboardController extends Controller
 {
     public function index(){
-    	$employee = HrEmployee::where('user_id',Auth::user()->id)->first();
-    	$picture = Auth::user()->picturePath();
-    	return Inertia::render('Dashboard', compact('employee','picture'));
+		$employee = HrEmployee::where('user_id',Auth::user()->id)->first();
+		$userName = $employee->first_name." ". $employee->last_name;
+    	$picture =  "https://hrms.barqaab.pk/storage/".Auth::user()->picturePath();
+    	return Inertia::render('Dashboard', compact('userName','picture'));
     }
 }
