@@ -14,5 +14,11 @@ class DashboardController extends Controller
 		$userName = $employee->first_name." ". $employee->last_name;
     	$picture =  "https://hrms.barqaab.pk/storage/".Auth::user()->picturePath();
     	return Inertia::render('Dashboard', compact('userName','picture'));
-    }
+	}
+	
+	public function totalEmployee(){
+		$allEmployee = HrEmployee::whereIn('hr_status_id',array(1,5))->count();
+		
+		return response()->json (['Total Employee'=>$allEmployee]);
+	}
 }

@@ -7,7 +7,7 @@ import UserPicture from "@/Pages/Layout/UserPicture";
 export default function TopHead(props) {
     return (
         <>
-            <nav className="navbar  navbar-dark bg-primary  fixed-top">
+            <nav className="navbar  navbar-dark bg-primary ">
                 <div className="container-fluid">
                     <button
                         className="navbar-toggler "
@@ -60,7 +60,7 @@ export default function TopHead(props) {
 
                     <div
                         className="offcanvas offcanvas-start"
-                        tabindex="-1"
+                        tabIndex="-1"
                         id="offcanvasNavbar"
                         aria-labelledby="offcanvasNavbarLabel"
                     >

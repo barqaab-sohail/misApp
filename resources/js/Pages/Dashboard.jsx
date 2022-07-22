@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Authenticated from "@/Layouts/Authenticated";
 import { Head } from "@inertiajs/inertia-react";
 import TopHeader from "@/Pages/Layout/TopHead";
+import Card from "@/Pages/Card.jsx";
 
 export default function Dashboard(props) {
-    console.log(props);
     return (
         <>
             {/* <Authenticated
@@ -28,7 +28,25 @@ export default function Dashboard(props) {
                     </div>
                 </div>
             </Authenticated> */}
-            <TopHeader name={props.userName} picture={props.picture} />
+            <div className="wrapper">
+                <TopHeader name={props.userName} picture={props.picture} />
+                <div className="main">
+                    <main className="content">
+                        <div className="container-fluid">
+                            <h1 className="h3 mb-3">
+                                <strong>Analytics</strong> Dashboard
+                            </h1>
+                            <div className="row">
+                                <Card
+                                    className={"col-sm-4"}
+                                    title={"Total Projects"}
+                                    quantity={20}
+                                />
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
         </>
     );
 }
