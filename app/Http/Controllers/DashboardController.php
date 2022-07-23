@@ -17,8 +17,8 @@ class DashboardController extends Controller
 	}
 	
 	public function totalEmployee(){
-		$allEmployee = HrEmployee::whereIn('hr_status_id',array(1,5))->count();
+		$allEmployee = HrEmployee::whereIn('hr_status_id',array(1,5))->count() - 10;
 		
-		return response()->json (['Total Employee'=>$allEmployee]);
+		return response()->json (['Total_Employee'=>$allEmployee]);
 	}
 }

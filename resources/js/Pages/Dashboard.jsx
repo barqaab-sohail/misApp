@@ -40,7 +40,7 @@ export default function Dashboard(props) {
                                 <Card
                                     className={"col-sm-4"}
                                     title={"Total Projects"}
-                                    quantity={20}
+                                    quantity={"Total_Employee"}
                                 />
                             </div>
                         </div>

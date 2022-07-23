@@ -1,44 +1,83 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import "../../css/card.css";
 
 const Card = (props) => {
+    const [employee, setEmployee] = useState([]);
     const getData = async () => {
         const response = await fetch(
             "http://192.168.1.10/misApp/public/api/allEmployees"
         );
-        const data = await response.json();
-        console.log(data);
+        setEmployee(await response.json());
     };
     useEffect(() => {
         getData();
-    });
+    }, []);
 
     return (
         <>
-            <div className={props.className}>
-                <div className="card">
-                    <div className="card-body">
-                        <div className="row">
-                            <div className="col mt-0">
-                                <h5 className="card-title">{props.title}</h5>
-                            </div>
-
-                            <div className="col-auto">
-                                <div className="stat text-primary">
-                                    <i
-                                        className="align-middle"
-                                        data-feather="truck"
-                                    ></i>
-                                </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xl-3">
+                        <div class="card bg-c-blue order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Orders Received</h6>
+                                <h2 class="text-right">
+                                    <i class="fa fa-cart-plus f-left"></i>
+                                    <span>486</span>
+                                </h2>
+                                <p class="m-b-0">
+                                    Completed Orders
+                                    <span class="f-right">351</span>
+                                </p>
                             </div>
                         </div>
-                        <h1 className="mt-1 mb-3">50</h1>
-                        <div className="mb-0">
-                            <span className="text-danger">
-                                {" "}
-                                <i className="mdi mdi-arrow-bottom-right"></i>{" "}
-                                -3.65%{" "}
-                            </span>
-                            <span className="text-muted">Since last week</span>
+                    </div>
+
+                    <div class="col-md-4 col-xl-3">
+                        <div class="card bg-c-green order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Orders Received</h6>
+                                <h2 class="text-right">
+                                    <i class="fa fa-rocket f-left"></i>
+                                    <span>486</span>
+                                </h2>
+                                <p class="m-b-0">
+                                    Completed Orders
+                                    <span class="f-right">351</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xl-3">
+                        <div class="card bg-c-yellow order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Orders Received</h6>
+                                <h2 class="text-right">
+                                    <i class="fa fa-refresh f-left"></i>
+                                    <span>486</span>
+                                </h2>
+                                <p class="m-b-0">
+                                    Completed Orders
+                                    <span class="f-right">351</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xl-3">
+                        <div class="card bg-c-pink order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Orders Received</h6>
+                                <h2 class="text-right">
+                                    <i class="fa fa-credit-card f-left"></i>
+                                    <span>486</span>
+                                </h2>
+                                <p class="m-b-0">
+                                    Completed Orders
+                                    <span class="f-right">351</span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
