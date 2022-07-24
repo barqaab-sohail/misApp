@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import Authenticated from "@/Layouts/Authenticated";
 import { Head } from "@inertiajs/inertia-react";
 import TopHeader from "@/Pages/Layout/TopHead";
-import Card from "@/Pages/Card.jsx";
+import Card from "@/Pages/Layout/Card.jsx";
 
 export default function Dashboard(props) {
     return (
@@ -34,19 +34,39 @@ export default function Dashboard(props) {
                     <main className="content">
                         <div className="container-fluid">
                             <h1 className="h3 mb-3">
-                                <strong>Analytics</strong> Dashboard
+                                <strong>Analytics</strong> Dashboard 
                             </h1>
                             <div className="row">
                                 <Card
-                                    className={"col-sm-4"}
-                                    title={"Total Projects"}
-                                    quantity={"Total_Employee"}
+                                    className={"col-xl-3"}
+                                    title={"Total Running Projects"}
+                                    quantity={"totalProjects"}
+                                    backgroundColor={"bg-c-blue"}
                                 />
+                                <Card
+                                    className={"col-xl-3"}
+                                    title={"Total Power Projects"}
+                                    quantity={"powerProjects"}
+                                    backgroundColor={"bg-c-yellow"}
+                                />
+                                <Card
+                                    className={"col-xl-3"}
+                                    title={"Total Water Projects"}
+                                    quantity={"waterProjects"}
+                                    backgroundColor={"bg-c-green"}
+                                />
+                                  <Card
+                                    className={"col-xl-3"}
+                                    title={"Completed Projects"}
+                                    quantity={"totalProjects"}
+                                    backgroundColor={"bg-c-pink"}
+                                />
+
                             </div>
                         </div>
                     </main>
                 </div>
             </div>
-        </>
+         </>
     );
 }
